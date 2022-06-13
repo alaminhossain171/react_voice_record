@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import Pack1 from './components/Pack1'
+// import Pack2 from './components/Pack2'
+// import Pack3 from './components/Pack3'
+
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+
+} from "react-router-dom";
+import Pack2 from './components/Pack2';
+import Pack3 from './components/Pack3';
+import FinalPack from './components/FinalPack';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <Router>
+    <Switch>
+      <Route exact path='/' component={Pack1} />
+      <Route exact path='/pack2' component={Pack2} />
+      <Route exact path='/pack3' component={Pack3} />
+      <Route exact path='/final' component={FinalPack} />
+    </Switch>
+    
+    </Router>
+  )
 }
 
-export default App;
+export default App
